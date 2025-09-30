@@ -1,11 +1,20 @@
-name: Build Job
-on: 
- # push:
- #   branches: 
-  #    - main
-  pull_request:
-    branches:
+name: Vprofile CICD Workflow
+
+on:
+  push:
+    branches: 
       - main
+      
+
+  pull_request:
+    branches: 
+      - main
+      
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "10 14 * * 1-5"   # 2:30 PM to 5:10 PM every weekday
 
 jobs:
   Build:
