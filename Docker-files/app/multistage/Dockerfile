@@ -1,5 +1,7 @@
 FROM openjdk:11 AS BUILD_IMAGE
 
+RUN apt-get update && apt-get install -y maven
+
 COPY . /app
 WORKDIR /app
 RUN mvn install
